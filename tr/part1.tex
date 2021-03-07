@@ -1,8 +1,8 @@
-\documentclass{beamer}
+\documentclass[aspectratio=169]{beamer}
 
 \input{preamble.tex}
 
-\subtitle{1. Kısım: Temeller}
+\subtitle{Bölüm 1: Temeller}
 
 \begin{document}
 
@@ -160,7 +160,7 @@ satir ile birbirinden ayrilir.
 \item Kaynak dosyadaki boşlukar çıktıda kaybolur.
 \begin{exampletwouptiny}
 Ispanya'da  yagmur    cogunlukla
-ovalara    yagar
+ovalara    yagar.
 \end{exampletwouptiny}
 \end{itemize}
 \end{frame}
@@ -168,26 +168,25 @@ ovalara    yagar
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsubsection{}: Caveats}
+\begin{frame}[fragile]{\insertsubsection{}: Uyarılar}
 \small
 \begin{itemize}
-\item Quotation marks are a bit tricky:\\
-use a backtick \keystroke{\`{}} on the left and an apostrophe \keystroke{\'{}} on the right.
+\item Tırnak işaretleri biraz zordur:\\
+Solda bir ters kesme \keystroke{\`{}} ve sağda kesme işareti \keystroke{\'{}} kullanın.
 \begin{exampletwouptiny}
-Single quotes: `text'.
+Tek tirnak: `metin'.
 
-Double quotes: ``text''.
+Cift tirnak: ``metin''.
 \end{exampletwouptiny}
 
-\item Some common characters have special meanings in \LaTeX:\\[1ex]
+\item \LaTeX'de bazı yaygın olarak kullanılan karekterlerin özel anlamları vardır:\\[1ex]
 \begin{tabular}{cl}
-\keystrokebftt{\%} & percent sign              \\
-\keystrokebftt{\#} & hash (pound / sharp) sign \\
-\keystrokebftt{\&} & ampersand                 \\
-\keystrokebftt{\$} & dollar sign               \\
+\keystrokebftt{\%} & yüzde işareti              \\
+\keystrokebftt{\#} & diyez işareti \\
+\keystrokebftt{\&} & ve işareti                 \\
+\keystrokebftt{\$} & dolar işareti               \\
 \end{tabular}
-\item If you just type these, you'll get an error. If you want one to appear in
-the output, you have to \emph{escape} it by preceding it with a backslash.
+\item Sadece bunları yazarsanız hata alırsınız. Eğer herhangi birinin çıktıda yer almasını istiyorsanız karakterin öncesinde ters eğik çizgi kullanın.
 \begin{exampletwoup}
 \$\%\&\#!
 \end{exampletwoup}
@@ -197,22 +196,17 @@ the output, you have to \emph{escape} it by preceding it with a backslash.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Handling Errors}
+\begin{frame}[fragile]{Hataları İşleme}
 \begin{itemize}
-\item \LaTeX{} can get confused when it is trying to compile your document. If
-it does, it stops with an error, which you must fix before it will produce
-any output.
-\item For example, if you misspell \cmdbs{emph} as \cmdbs{meph}, \LaTeX{} will
-stop with an ``undefined control sequence'' error, because ``meph'' is not
-one of the commands it knows.
+\item Dokümanınızı derlerken \LaTeX{}'in kafası karışabilir. Böyle bir durumda, çıktı oluşmadan önce düzeltmeniz gereken, bir hata ile sonlanır.
+\item Örneğin \cmdbs{emph} komutunu \cmdbs{meph} şeklinde yanlış yazarsanız, \LaTeX{} ``undefined control sequence'' hatası ile sonlanır.
+Çünkü ``meph'' \LaTeX{}'in tanıdığı komutlardan birisi değildir.
 \end{itemize}
-\begin{block}{Advice on Errors}
+\begin{block}{Hata Tavsiyesi}
 \begin{enumerate}
-\item Don't panic! Errors happen.
-\item Fix them as soon as they arise --- if what you just typed caused an error,
-you can start your debugging there.
-\item If there are multiple errors, start with the first one --- the cause may
-even be above it.
+\item Paniklemeyin! Hatalar olacaktır.
+\item Hatalar ortaya çıkar çıkmaz onları düzeltin --- eğer yazdığınız bir şey hataya neden olduysa hata ayıklamaya oradan başlayabilirsiniz.
+\item Eğer birden fazla hata varsa, ilk hata ile başlayın --- sebebi daha yukarda bile olabilir. 
 \end{enumerate}
 \end{block}
 \end{frame}
@@ -220,9 +214,9 @@ even be above it.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Typesetting Exercise 1}
+\begin{frame}[fragile]{Dizgi Egzersizi 1}
 
-\begin{block}{Typeset this in \LaTeX:
+\begin{block}{Bunu \LaTeX'de yazın:
 \footnote{\url{http://en.wikipedia.org/wiki/Economy_of_the_United_States}}}
 In March 2006, Congress raised that ceiling an additional \$0.79 trillion to
 \$8.97 trillion, which is approximately 68\% of GDP. As of October 4, 2008, the
@@ -232,40 +226,40 @@ to \$11.3 trillion.
 \vskip 2ex
 \begin{center}
 \fbox{\href{\wlnewdoc{basics-exercise-1.tex}}{%
-Click to open this exercise in \wllogo{}}}
+Bu egzersizi \wllogo{} ile açmak için tıklayın.}}
 \end{center}
 
 \begin{itemize}
-\item Hint: watch out for characters with special meanings!
-\item Once you've tried,
+\item İpucu: karakterlerin özel anlamına dikkat edin!
+\item Denedikten sonra,
 \fbox{\href{\wlnewdoc{basics-exercise-1-solution.tex}}{%
-click here to see my solution}}.
+benim çözümümü görmek için tıklayın}}.
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Typesetting Mathematics}
-\begin{frame}[fragile]{\insertsubsection{}: Dollar Signs}
+\subsection{Matematik Dizgileme}
+\begin{frame}[fragile]{\insertsubsection{}: Dolar İşaretleri}
 \begin{itemize}
-\item Why are dollar signs \keystrokebftt{\$} special? We use them to mark mathematics in text.\\[1ex]
+\item Dolar işaretleri \keystrokebftt{\$} neden özeldir? Metnin içinde matematik ifadeleri işaretlemek için kullanılır.\\[1ex]
 \begin{exampletwouptiny}
-% not so good:
-Let a and b be distinct positive
-integers, and let c = a - b + 1.
+% iyi degil:
+a ve b iki ayri pozitif tamsayi olsun
+ve c = a - b + 1 olsun.
 
-% much better:
-Let $a$ and $b$ be distinct positive
-integers, and let $c = a - b + 1$.
+% daha iyi:
+$a$ ve $b$ iki ayri pozitif tamsayi 
+ve $c = a - b + 1$ olsun.
 \end{exampletwouptiny}
-\item Always use dollar signs in pairs --- one to begin the mathematics, and one
-to end it.
-\item \LaTeX{} handles spacing automatically; it ignores your spaces.
-\begin{exampletwouptiny}
-Let $y=mx+b$ be \ldots
+\item Dolar işaretlerini her zaman çift olarak kullanın --- birisi matematik ifadesini başlatmak için, diğeri bitirmek için.
+\item \LaTeX{} boşlukarı otomatik olarak işler; sizin boşluklarınızı göz ardı eder.
 
-Let $y = m x + b$ be \ldots
+\begin{exampletwouptiny}
+$y=mx+b$ olsun \ldots
+
+$y = m x + b$ olsun \ldots
 \end{exampletwouptiny}
 \end{itemize}
 \end{frame}
@@ -273,16 +267,15 @@ Let $y = m x + b$ be \ldots
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsubsection{}: Notation}
+\begin{frame}[fragile]{\insertsubsection{}: Notasyon}
 \begin{itemize}
-\item Use caret \keystrokebftt{\^} for superscripts and underscore \keystrokebftt{\_} for subscripts.
+\item Üst simgeler için şapka işareti \keystrokebftt{\^}, alt simgeler için alt çizgi \keystrokebftt{\_} kullanın.
 \begin{exampletwouptiny}
 $y = c_2 x^2 + c_1 x + c_0$
 \end{exampletwouptiny}
 \vskip 2ex
 
-\item Use curly braces \keystrokebftt{\{} \keystrokebftt{\}} to group
-superscripts and subscripts.
+\item Alt ve üst simgeleri gruplamak için süslü parantezleri \keystrokebftt{\{} \keystrokebftt{\}} kullanın.
 \begin{exampletwouptiny}
 $F_n = F_n-1 + F_n-2$     % oops!
 
@@ -290,7 +283,7 @@ $F_n = F_{n-1} + F_{n-2}$ % ok!
 \end{exampletwouptiny}
 \vskip 2ex
 
-\item There are commands for Greek letters and common notation.
+\item Yunan harfleri ve yaygın gösterimler için komutlar vardır.
 \begin{exampletwouptiny}
 $\mu = A e^{Q/RT}$
 
@@ -302,71 +295,65 @@ $\Omega = \sum_{k=1}^{n} \omega_k$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsubsection{}: Displayed Equations}
+\begin{frame}[fragile]{\insertsubsection{}: Görüntülenen Denklemler}
 \begin{itemize}
-\item If it's big and scary, \emph{display} it on its own line using
-\cmdbegin{equation} and \cmdend{equation}.\\[2ex]
+\item Eğer denklem büyük ve korkutucu  ise kendi satırında görüntülemek için \cmdbegin{equation} ve \cmdend{equation} arasına yazın.\\[2ex]
 \begin{exampletwouptiny}
-The roots of a quadratic equation
-are given by
+Ikinci dereceden bir denklemin
+kokleri
 \begin{equation}
 x = \frac{-b \pm \sqrt{b^2 - 4ac}}
          {2a}
 \end{equation}
-where $a$, $b$ and $c$ are \ldots
+ile hesaplanir. $a$, $b$ ve $c$ \ldots
 \end{exampletwouptiny}
 \vskip 1em
-{\scriptsize Caution: \LaTeX{} mostly ignores your spaces in mathematics, but it
-can't handle blank lines in equations --- don't put blank lines in your
-mathematics.}
+{\scriptsize Dikkat: \LaTeX{} çoğunlukla matematik ifadelerindeki boşlukları göz ardı eder fakat denklemdeki boş satırları işleyemez. --- matematiksel ifadelerde boş satır kullanmayın.}
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Interlude: Environments}
+\begin{frame}[fragile]{Perde Arkası: Ortamlar}
 \begin{itemize}
-\item \bftt{equation} is an \emph{environment} --- a context.
-\item A command can produce different output in different contexts.
+\item \bftt{equation} bir \emph{ortamdır} --- bir içerik.
+\item Bir komut farklı bağlamlarda farklı çıktılar üretebilir.
 \begin{exampletwouptiny}
-We can write
+Metnin icinde 
 $ \Omega = \sum_{k=1}^{n} \omega_k $
-in text, or we can write
+yazabiliriz, ya da goruntulemek icin
 \begin{equation}
   \Omega = \sum_{k=1}^{n} \omega_k
 \end{equation}
-to display it.
+yazabiliriz.
 \end{exampletwouptiny}
 \vskip 2ex
-\item Note how the $\Sigma$ is bigger in the \bftt{equation} environment, and
-how the subscripts and superscripts change position, even though we used the
-same commands.
+\item $\Sigma$ sembolünün \bftt{equation} ortamında nasıl daha büyük olduğuna ve aynı komut kullanılsa bile alt ve üst simgelerin konumunun nasıl değiştiğine dikkat edin.
 \vskip 1em
-{\scriptsize In fact, we could have written \bftt{\$...\$} as
-\cmdbegin{math}\bftt{...}\cmdend{math}.}
+{\scriptsize Aslında, \bftt{\$...\$} ifadesini 
+\cmdbegin{math}\bftt{...}\cmdend{math} şeklinde de yazabilirdik.}
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Interlude: Environments}
+\begin{frame}[fragile]{Perde Arkası: Ortamlar}
 \begin{itemize}
-\item The \cmdbs{begin} and \cmdbs{end} commands are used to create many
-different environments.
+\item \cmdbs{begin} ve \cmdbs{end} komutları birçok farklı ortam oluşturmak için kullanılır.
 \vskip 2ex
 
-\item The \bftt{itemize} and \bftt{enumerate} environments generate lists.
+\item \bftt{itemize} ve \bftt{enumerate} ortamları liste oluştururlar.
 \begin{exampletwouptiny}
-\begin{itemize} % for bullet points
-\item Biscuits
-\item Tea
+\begin{itemize} % madde imleri icin
+\item Ekmek
+\item Su
 \end{itemize}
 
-\begin{enumerate} % for numbers
-\item Biscuits
-\item Tea
+\begin{enumerate} % numaralandirma icin
+\item Ekmek
+\item Su
 \end{enumerate}
 \end{exampletwouptiny}
 \end{itemize}
@@ -375,24 +362,20 @@ different environments.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Interlude: Packages}
+\begin{frame}[fragile]{Perde Arkası: Paketler}
 
 \begin{itemize}
-\item All of the commands and environments we've used so far are built into
-\LaTeX.
+\item Şu ana kadar kullandığımız bütün komutlar ve ortamlar \LaTeX{} içinde yerleşiktir.
 
-\item \emph{Packages} are libraries of extra commands and environments. There
-are thousands of freely available packages.
+\item \emph{Paketler} ekstra komut ve ortamların bulunduğu kütüphanelerdir. Binlerce ücretsiz paket bulunmaktadır. 
+\item Kullanmak istediğimiz paketlerin her birini \emph{başlangıç} kısmında \cmdbs{usepackage} komutu ile yüklemeliyiz.
 
-\item We have to load each of the packages we want to use with a
-\cmdbs{usepackage} command in the \emph{preamble}.
-
-\item Example: \bftt{amsmath} from the American Mathematical Society.
+\item Örnek: Amerikan Matematik Topluluğu için \bftt{amsmath}.
 \begin{minted}[fontsize=\small,frame=single]{latex}
 \documentclass{article}
-\usepackage{amsmath} % preamble
+\usepackage{amsmath} % başlangıç
 \begin{document}
-% now we can use commands from amsmath here...
+% artık burada amsmath komutlarını kullanabiliriz
 \end{document}
 \end{minted}
 \end{itemize}
@@ -401,26 +384,24 @@ are thousands of freely available packages.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsubsection{}: Examples with \bftt{amsmath}}
+\begin{frame}[fragile]{\insertsubsection{}: \bftt{amsmath} örnekleri}
 \begin{itemize}
-\item Use \bftt{equation*} (``equation-star'') for unnumbered equations.
+\item Numaralandırılmayan denklemler için \bftt{equation*} (``equation-yıldızlı'') kullanın.
 \begin{exampletwouptiny}
 \begin{equation*}
   \Omega = \sum_{k=1}^{n} \omega_k
 \end{equation*}
 \end{exampletwouptiny}
-\item \LaTeX{} treats adjacent letters as variables multiplied together, which
-is not always what you want. \bftt{amsmath} defines commands for many common
-mathematical operators.
+\item \LaTeX{}, bitişik harfleri değişkenlerin çarpımı şeklinde ele alır, her zaman istediğiniz bir şey değildir. \bftt{amsmath} birçok yaygın matematik operatörü için komutlar tanımlar.
 \begin{exampletwouptiny}
-\begin{equation*} % bad!
+\begin{equation*} % kotu!
  min_{x,y} (1-x)^2 + 100(y-x^2)^2
 \end{equation*}
-\begin{equation*} % good!
+\begin{equation*} % iyi!
 \min_{x,y}{(1-x)^2 + 100(y-x^2)^2}
 \end{equation*}
 \end{exampletwouptiny}
-\item You can use \cmdbs{operatorname} for others.
+\item Diğerleri için \cmdbs{operatorname} kullanabilirsiniz.
 \begin{exampletwouptiny}
 \begin{equation*}
 \beta_i =
@@ -434,15 +415,15 @@ mathematical operators.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsubsection{}: Examples with \bftt{amsmath}}
+\begin{frame}[fragile]{\insertsubsection{}: \bftt{amsmath} örnekleri}
 \begin{itemize}{\small
-\item Align a sequence of equations at the equals sign
+\item Eşittir işareti ile bir denkem dizisini \bftt{align*} ortamı ilehizalama
 \begin{align*}
 (x+1)^3 &= (x+1)(x+1)(x+1) \\
         &= (x+1)(x^2 + 2x + 1) \\
         &= x^3 + 3x^2 + 3x + 1
 \end{align*}
-with the \bftt{align*} environment.
+
 
 % for whatever reason, this doesn't play well with the twoup environment
 \begin{minted}[fontsize=\small,frame=single]{latex}
@@ -452,10 +433,8 @@ with the \bftt{align*} environment.
         &= x^3 + 3x^2 + 3x + 1
 \end{align*}
 \end{minted}
-\item An ampersand \keystrokebftt{\&} separates the left column (before the
-$=$) from the right column (after the $=$).
-\item A double backslash \keystrokebftt{\bs}\keystrokebftt{\bs} starts a new
-line.
+\item Bir ampersand \keystrokebftt{\&} sembolü sol sütun($=$'den önce) ile sağ sütunu($=$'den sonra) birbirinden ayırır.
+\item Çift ters eğik çizgi \keystrokebftt{\bs}\keystrokebftt{\bs} yeni bir satır başlatır.
 }\end{itemize}
 \end{frame}
 
@@ -463,9 +442,9 @@ line.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Typesetting Exercise 2}
+\begin{frame}[fragile]{Dizgi Egzersizi 2}
 
-\begin{block}{Typeset this in \LaTeX:}
+\begin{block}{\LaTeX'de Dizgi:}
 Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically
 distributed random variables with $\operatorname{E}[X_i] = \mu$ and
 $\operatorname{Var}[X_i] = \sigma^2 < \infty$, and let
@@ -478,34 +457,32 @@ $\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $N(0, \sigma^2)$.
 \vskip 2ex
 \begin{center}
 \fbox{\href{\wlnewdoc{basics-exercise-2.tex}}{%
-Click to open this exercise in \wllogo{}}}
+\wllogo{}'de açmak için tıklayın}}
 \end{center}
 \begin{itemize}
-\item Hint: the command for $\infty$ is \cmdbs{infty}.
-\item Once you've tried,
+\item İpucu: $\infty$ sembolü için \cmdbs{infty} komutunu kullanın.
+\item Denedikten sonra,
 \fbox{\href{\wlnewdoc{basics-exercise-2-solution.tex}}{%
-click here to see my solution}}.
+benim çözümümü görmek için tıklayın}}.
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{End of Part 1}
+\begin{frame}{1. Bölümün Sonu}
 \begin{itemize}
-\item Congrats! You've already learned how to \ldots
+\item Tebrikler! Aşağıdakileri nasıl yapacağınızı öğrendiniz\ldots
 \begin{itemize}
-\item Typeset text in \LaTeX.
-\item Use lots of different commands.
-\item Handle errors when they arise.
-\item Typeset some beautiful mathematics.
-\item Use several different environments.
-\item Load packages.
+\item \LaTeX'de dizgileme.
+\item Bir çok farklı komutun kullanımı.
+\item Hata ortaya çıkınca işleme.
+\item Matematik ifadeleri yazma.
+\item Birçok farklı ortamı kullanma.
+\item Paketleri yükleme.
 \end{itemize}
-\item That's amazing!
-\item In Part 2, we'll see how to use \LaTeX{} to write structured documents
-with sections, cross references, figures, tables and bibliographies. See you
-then!
+\item Bu inanılmaz!
+\item 2. bölümde \LaTeX kullanarak bölümleri, çapraz referansları, şekilleri, tabloları ve kaynakçası olan yapısal dokümanların nasıl oluşturulacağını göreceğiz. Görüşmek üzere!
 \end{itemize}
 \end{frame}
 

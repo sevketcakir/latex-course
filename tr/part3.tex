@@ -1,8 +1,8 @@
-\documentclass{beamer}
+\documentclass[aspectratio=169]{beamer}
 
 \input{preamble.tex}
 
-\subtitle{Part 3: Not Just Papers: Presentations \& More}
+\subtitle{Bölüm 3: Sadece Makaleler Değil: Sunumlar \& Daha Fazlası}
 
 \newcommand{\alice}[1]{\todo[color=green!40]{#1}}
 \newcommand{\bob}[1]{\todo[color=purple!40]{#1}}
@@ -41,40 +41,40 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\LaTeX{} Recap}
+\section{\LaTeX{} Özeti}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsection}
 \begin{itemize}
-\item You write your document in \texttt{plain text} with \cmd{commands} that
-describe its structure and meaning.
-\item The \texttt{latex} program processes your text and commands to produce a
-beautifully formatted document.
+	%\item You write your document in \texttt{plain text} with \cmd{commands} that describe its structure and meaning.
+	%\item The \texttt{latex} program processes your text and commands to produce a beautifully formatted document.
+	\item Dokümanınızı \texttt{düz metin} olarak \cmd{komutlarla} yazarsınız. Komutlar metnin yapısını ve anlamını tanımlar.
+	\item \texttt{Latex} programı yazdığınız metin ve komutları işleyerek güzel biçimlendirilmiş dokümanlar üretir.
 \end{itemize}
 \vskip 2ex
 \begin{center}
-\begin{minted}[frame=single]{latex}
-The rain in Spain falls \emph{mainly} on the plain.
-\end{minted}
-\vskip 2ex
-\tikz\node[single arrow,fill=gray,font=\ttfamily\bfseries,%
-  rotate=270,xshift=-1em]{latex};
-\vskip 2ex
-\fbox{The rain in Spain falls \emph{mainly} on the plain.}
+	%The rain in Spain falls \emph{mainly} on the plain.
+	\begin{minted}[frame=single]{latex}
+İspanya'da yağmur \emph{çoğunlukla} ovaya yağar.
+	\end{minted}
+	\vskip 2ex
+	\tikz\node[single arrow,fill=gray,font=\ttfamily\bfseries,%
+	rotate=270,xshift=-1em]{latex};
+	\vskip 2ex
+	\fbox{İspanya'da yağmur \emph{çoğunlukla} ovaya yağar.}
 \end{center}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Commands \& Arguments}
+\begin{frame}[fragile]{\insertsection: Komutlar \& Argümanlar}
 \begin{itemize}
-\item A command starts with a \emph{backslash} \keystrokebftt{\bs}.
-\item Some commands take an \emph{argument} in curly braces \keystrokebftt{\{}
-\keystrokebftt{\}}.
-\item Some commands also take \emph{optional arguments} in square brackets \keystrokebftt{[} \keystrokebftt{]}.
+\item Bir komut \emph{ters eğik çizgi} \keystrokebftt{\bs} ile başlar.
+\item Bazı komutlar süslü parantezler \keystrokebftt{\{} \keystrokebftt{\}} içinde bir \emph{argüman} alır.
+\item Bazı komutlar da köşeli parantezler \keystrokebftt{[} \keystrokebftt{]} içinde  \emph{isteğe bağlı argümanlar} alır.
 \vskip 2ex
 \begin{exampletwouptiny}
 \includegraphics[
@@ -86,26 +86,28 @@ The rain in Spain falls \emph{mainly} on the plain.
 \end{exampletwouptiny}
 \end{itemize}
 
-\tiny{Image license: \href{https://pixabay.com/en/animal-apple-attractive-beautiful-1239390/}{CC0}}
+\tiny{Görüntü lisansı: \href{https://pixabay.com/en/animal-apple-attractive-beautiful-1239390/}{CC0}}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Environments}
+\begin{frame}[fragile]{\insertsection: Ortamlar}
 \begin{itemize}
-\item The \cmdbs{begin} and \cmdbs{end} commands are used to create many
-different environments --- contexts.
+%\item The \cmdbs{begin} and \cmdbs{end} commands are used to create many
+%different environments --- contexts.
+\item \cmdbs{begin} ve \cmdbs{end} komutları birçok farklı ortam --- bağlam oluşturmak için kullanılır.
 
-\item The \bftt{itemize} and \bftt{enumerate} environments make lists.
+%\item The \bftt{itemize} and \bftt{enumerate} environments make lists.
+\item \bftt{itemize} ve \bftt{enumerate} ortamları listeler oluşturur.
 \vskip 2ex
 \begin{exampletwouptiny}
-\begin{itemize} % for bullet points
+\begin{itemize} % madde imleri icin
 \item Biscuits
 \item Tea
 \end{itemize}
 
-\begin{enumerate} % for numbers
+\begin{enumerate} % sayilar icin
 \item Biscuits
 \item Tea
 \end{enumerate}
@@ -119,7 +121,7 @@ different environments --- contexts.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsection: Mathematics}
 \begin{itemize}
-\item The \bftt{equation} environment makes a numbered equation.
+\item \bftt{equation} ortamı numaralandırılmış denklemler oluşturur.
 \begin{exampletwouptiny}
 \begin{equation}
   \sum_{k=1}^{n} \frac{1}{2^k}
@@ -127,36 +129,33 @@ different environments --- contexts.
 \end{exampletwouptiny}
 \vskip 2ex
 
-\item Use dollar signs \keystrokebftt{\$} to mark mathematics in text.\\[1ex]
+\item Metnin içinde matematik sembolleri yazmak için dolar işareti \keystrokebftt{\$} kullanın.\\[1ex]
 \begin{exampletwouptiny}
-% not so good:
-Let a and b be distinct positive
-integers, and let c = a - b + 1.
+% iyi degil:
+a ve b iki ayri pozitif tamsayi olsun
+ve c = a - b + 1 olsun.
 
-% much better:
-Let $a$ and $b$ be distinct positive
-integers, and let $c = a - b + 1$.
+% daha iyi:
+$a$ ve $b$ iki ayri pozitif tamsayi 
+ve $c = a - b + 1$ olsun.
 \end{exampletwouptiny}
 \vskip 2ex
-\item Always use dollar signs in pairs --- one to begin the mathematics, and one
-to end it.
+\item Dolar işaretlerini her zaman çift olarak kullanın --- bir tanesi matematik ifadesini başlatmak için, diğeri bitirmek için.
 \vskip 1em
-{\scriptsize In fact, we could have written \bftt{\$...\$} as
-\cmdbegin{math}\bftt{...}\cmdend{math}.}
+{\scriptsize Aslında, \bftt{\$...\$}  ifadesini 
+\cmdbegin{math}\bftt{...}\cmdend{math} şeklinde yazabilirdik.}
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Document Structure}
+\begin{frame}[fragile]{\insertsection: Belge Yapısı}
 \begin{itemize}{\small
-\item Starts with the \cmdbs{documentclass} --- what type of document.
-\item Metadata (\cmdbs{title} and \cmdbs{author}) and packages in the
-preamble.
-\item Content between \cmdbegin{document} and \cmdend{document}.
-\item The \cmdbs{maketitle} command creates the title; \cmdbs{section} commands
-create numbered sections.
+\item \cmdbs{documentclass} ile başlar --- ne tür bir belge.
+\item Meta veriler (\cmdbs{title} and \cmdbs{author}) ve paketler başlangıçta yer alır.
+\item İçerik \cmdbegin{document} ve \cmdend{document} arasındadır.
+\item \cmdbs{maketitle} komutu başlığı oluşturur ; \cmdbs{section} komutu numaralandırılmış bölümleri oluşturur.
 }\end{itemize}
 \begin{minipage}{0.55\linewidth}
 \inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
@@ -171,27 +170,27 @@ create numbered sections.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Exercise}
+\begin{frame}[fragile]{\insertsection: Alıştırma}
 
 \begin{enumerate}
-\item Here is the text for a short article:\footnote{Based on \url{http://www.cgd.ucar.edu/cms/agu/scientific_talk.html}}
+\item Kısa bir makale için metin:\footnote{\url{http://www.cgd.ucar.edu/cms/agu/scientific_talk.html} sitesinden}
 \begin{center}
 \fbox{\href{\wlnewdoc{recap-exercise.tex}}{%
-Click to open this exercise in \wllogo{}}}
+Alıştırmayı  \wllogo{}'te açmak için tıklayın}}
 \end{center}
 \vskip 2ex
-\item Add \LaTeX{} commands to the text to make it look like this one:
+\item Metnin aşağıdaki gibi görünmesi için \LaTeX{} komutları ekleyin:
 \begin{center}
 \fbox{\href{\fileuri/recap-exercise-solution.pdf}{%
-Click to open the model document}}
+Model belgeyi açmak için tıklayın}}
 \end{center}
 \end{enumerate}
 
-\begin{block}{Hints}
+\begin{block}{İpuçları}
 \begin{itemize}
-\item Use the \bftt{enumerate} and \bftt{itemize} environments for lists.
-\item To typeset a \keystrokebftt{\%} percent sign, \emph{escape} it with a backslash (\cmdbs{\%}).
-\item To typeset the equation, use \cmdbs{frac} for the fraction and the \cmdbs{left(} and \cmdbs{right)} commands for the parentheses.
+\item Listeler için \bftt{enumerate} ve \bftt{itemize} ortamlarını kullanın.
+\item Yüzde işareti \keystrokebftt{\%} yazmak için, \emph{kaçış} karakteri olarak ters bölü sembolü ile birlikte kullanın (\cmdbs{\%}).
+\item Denklemi oluştururken, bölme işlemi için \cmdbs{frac} ve parantezler için  \cmdbs{left(} ve \cmdbs{right)} kullanın.
 \end{itemize}
 \end{block}
 \end{frame}
@@ -199,17 +198,16 @@ Click to open the model document}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Presentations with \protect\bftt{beamer}}
+\section{\protect\bftt{beamer} ile Sunumlar}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsection}
 \begin{itemize}
-\item Beamer is a package for creating presentations (such as this one!) in
-\LaTeX{}.
-\item It provides the \bftt{beamer} document class.
-\item Use the \bftt{frame} environment to create slides.
+\item Beamer, \LaTeX{}'de sunumlar oluşturmak için bir paket(bunun gibi!).
+\item \bftt{beamer} belge sınıfını sağlar.
+\item Slaytlar oluşturmak için \bftt{frame} ortamını kullanın.
 \end{itemize}
 \begin{minipage}{0.55\linewidth}
 \inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
@@ -224,16 +222,16 @@ Click to open the model document}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Following Along}
+\begin{frame}[fragile]{\insertsection: Birlikte Takip Edin}
 
 \begin{itemize}
-\item As we go through the following slides, try out the examples by typing them
-into the example document on \wllogo.
+\item Aşağıdaki slaytlarda ilerlerken, \wllogo{}'teki örnek belgeye yazarak örnekleri deneyin.
+
 \end{itemize}
 \vskip 2ex
 \begin{center}
 \fbox{\href{\wlnewdoc{beamer-minimal.tex}}{%
-Click to open the example document in \wllogo{}}}
+Örnek belgeyi \wllogo{}'te açmak için tıklayın}}
 \end{center}
 \end{frame}
 
@@ -241,13 +239,13 @@ Click to open the example document in \wllogo{}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]
-\frametitle{\insertsection: Frames}
+\frametitle{\insertsection: Çerçeveler}
 \begin{itemize}
-\item Use \cmdbs{frametitle} to give the frame a title.
-\item Then add content to the frame.
-\item The source for this frame looks like:
+\item Sayfaya/Çerçeveye başlık vermek için \cmdbs{frametitle} kullanın.
+\item Ardından çerçeveye içerik ekleyin.
+\item Bu çerçevenin kaynağı şu şekildedir:
 \vskip 2ex
-\inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
+\inputminted[fontsize=\scriptsize,frame=single,resetmargins,breaklines]{latex}%
   {beamer-frame.tex}
 \end{itemize}
 \end{frame}
@@ -257,10 +255,12 @@ Click to open the example document in \wllogo{}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsection: Sections}
 \begin{itemize}
-\item You can use \cmdbs{section}s to group your \bftt{frame}s, and
-\bftt{beamer} will use them to create an automatic outline.
-\item To generate an outline, use the \cmdbs{tableofcontents} command. Here's
-one for this presentation. The \bftt{currentsection} option highlights the current section.
+\item Çerçeveleri \cmdbs{frame} gruplamak için \cmdbs{section} kullanılabilir. \bftt{beamer} bölümleri kullanarak otomatik anahat oluşturur.
+%\item You can use \cmdbs{section}s to group your \bftt{frame}s, and
+%\bftt{beamer} will use them to create an automatic outline.
+\item Anahat oluşturmak için \cmdbs{tableofcontents} komutunu kullanın. Bu sunum için burada var. \cmdbs{currentsection} özelliği mevcut bölümü vurgular.
+%\item To generate an outline, use the \cmdbs{tableofcontents} command. Here's
+%one for this presentation. The \bftt{currentsection} option highlights the current section.
 \vskip 2ex
 \begin{exampletwouptiny}
 \tableofcontents[currentsection]
@@ -271,15 +271,16 @@ one for this presentation. The \bftt{currentsection} option highlights the curre
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Multiple Columns}
+\begin{frame}[fragile]{\insertsection: Çoklu Sütunlar}
 \begin{columns}
 \begin{column}{0.4\textwidth}
 \begin{itemize}
-\item Use the \bftt{columns} and \bftt{column} environments to break the slide
-into columns.
-\item The argument for each \bftt{column} determines its width.
-\item See also the \bftt{multicol} package, which automatically breaks your
-content into columns.
+%\item Use the \bftt{columns} and \bftt{column} environments to break the slide into columns.
+\item Slaytı sütunlara bölmek için \bftt{columns} ve \bftt{column} ortamlarını kullanın.
+%\item The argument for each \bftt{column} determines its width.
+\item Her sütun(\bftt{column}) için argüman genişliği belirler.
+%\item See also the \bftt{multicol} package, which automatically breaks your content into columns.
+\item İçeriğinizi otomatik olarak sütunlara bölen \bftt{multicol} paketine de bakın.
 \end{itemize}
 \end{column}
 \begin{column}{0.6\textwidth}
@@ -287,13 +288,13 @@ content into columns.
 \begin{columns}
   \begin{column}{0.4\textwidth}
     \begin{itemize}
-    \item Use the columns ...
-    \item The argument ...
-    \item See also the ...
+    \item Slaytı sütulara ...
+    \item Her sütun ...
+    \item İçeriğinizi otomatik ...
     \end{itemize}
   \end{column}
   \begin{column}{0.6\textwidth}
-    % second column
+    % ikinci sütun
   \end{column}
 \end{columns}
 \end{minted}
@@ -304,44 +305,43 @@ content into columns.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Highlights}
+\begin{frame}[fragile]{\insertsection: Vurgular}
 \begin{itemize}
 
-\item Use \cmdbs{emph} or \cmdbs{alert} to highlight:
+\item Vurgu için \cmdbs{emph} ve \cmdbs{alert} kullanın:
 \vskip 1ex
 \begin{exampletwouptiny}
-I should \emph{emphasise} that
-this is an \alert{important} point.
+Bunun \alert{onemli} bir nokta
+oldugunu \emph{belirtmeliyim}.
 \end{exampletwouptiny}
 \vskip 1ex
 
-\item Or specify bold face or italics:
+\item Kalın veya italik olarak belirtin:
 \vskip 1ex
 \begin{exampletwouptiny}
-Text in \textbf{bold face}.
-Text in \textit{italics}.
+\textbf{Kalin} metin.
+\textit{italik} metin.
 \end{exampletwouptiny}
 \vskip 1ex
 
-\item Or specify a color (American spelling):
+\item Veya bir renk tanımlayın:
 \vskip 1ex
 \begin{exampletwouptiny}
-It \textcolor{red}{stops}
-and \textcolor{green}{starts}.
+\textcolor{red}{Durur}
+ve \textcolor{green}{baslar}.
 \end{exampletwouptiny}
 \vskip 1ex
-\item See \url{http://www.math.umbc.edu/~rouben/beamer/quickstart-Z-H-25.html}
-for more colors \& custom colors.
+\item Daha fazla renk ve özel renkler için \url{http://www.math.umbc.edu/~rouben/beamer/quickstart-Z-H-25.html} adresine bakın.
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Figures}
+\begin{frame}[fragile]{\insertsection: Şekiller}
 \begin{itemize}
-\item Use \cmdbs{includegraphics} from the \bftt{graphicx} package.
-\item The \bftt{figure} environment centers by default, in \bftt{beamer}.
+\item \bftt{graphicx} paketinden \cmdbs{includegraphics} kullanın.
+\item \bftt{figure} ortamı \bftt{beamer}'da varsayılan olarak ortalanır.
 \vskip 2ex
 \begin{exampletwouptiny}
 \begin{figure}
@@ -351,55 +351,57 @@ for more colors \& custom colors.
 \end{exampletwouptiny}
 \end{itemize}
 
-\tiny{Image license: \href{https://pixabay.com/en/animal-apple-attractive-beautiful-1239390/}{CC0}}
+\tiny{Görüntü lisansı: \href{https://pixabay.com/en/animal-apple-attractive-beautiful-1239390/}{CC0}}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Tables}
+\begin{frame}[fragile]{\insertsection: Tablolar}
 \begin{itemize}
-\item Tables in \LaTeX{} take some getting used to.
-\item Use the \bftt{tabular} environment from the \bftt{tabularx} package.
-\item The argument specifies column alignment --- \textbf{l}eft, \textbf{r}ight, \textbf{r}ight.
+\item \LaTeX{} çindeki tablolara alışmak biraz zaman alır.
+\item \bftt{tabularx} paketinden \bftt{tabular} ortamını kullanın.
+\item Argüman sütun hizalamasını belirtir --- \textbf{l}eft, \textbf{r}ight, \textbf{r}ight.
+%\item The argument specifies column alignment --- \textbf{l}eft, \textbf{r}ight, \textbf{r}ight.
 \begin{exampletwouptiny}
 \begin{tabular}{lrr}
-Item   & Qty & Unit \$ \\
-Widget & 1   & 199.99  \\
-Gadget & 2   & 399.99  \\
-Cable  & 3   & 19.99   \\
+Urun   & Adet & Fiyat \$ \\
+Arac & 1   & 199.99  \\
+Gerec & 2   & 399.99  \\
+Kablo  & 3   & 19.99   \\
 \end{tabular}
 \end{exampletwouptiny}
-\item It also specifies vertical lines; use \cmdbs{hline} for horizontal lines.
+\item Dikey çizgileri de belirtir; yatay çizgi için \cmdbs{hline} kullanın.
 \begin{exampletwouptiny}
 \begin{tabular}{|l|r|r|} \hline
-Item   & Qty & Unit \$ \\\hline
-Widget & 1   & 199.99  \\
-Gadget & 2   & 399.99  \\
-Cable  & 3   & 19.99   \\\hline
+Urun   & Adet & Fiyat \$ \\\hline
+Arac & 1   & 199.99  \\
+Gerec & 2   & 399.99  \\
+Kablo  & 3   & 19.99   \\\hline
 \end{tabular}
 \end{exampletwouptiny}
-\item Use an ampersand \keystrokebftt{\&} to separate columns and a double backslash \keystrokebftt{\bs}\keystrokebftt{\bs} to start a new row.
+\item Sütunları ayırmak için ampersand \keystrokebftt{\&} ve yeni satıra başlamak için çift ters eğik çizgi \keystrokebftt{\bs}\keystrokebftt{\bs} kullanın.
+%\item Use an ampersand \keystrokebftt{\&} to separate columns and a double backslash \keystrokebftt{\bs}\keystrokebftt{\bs} to start a new row.
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Blocks}
+\begin{frame}[fragile]{\insertsection: Bloklar}
 \begin{itemize}
-\item A \bftt{block} environment makes a titled box.
+\item \bftt{block} ortamı başlıklı bir kutu oluşturur.
 \begin{exampletwouptiny}
-\begin{block}{Interesting Fact}
-This is important.
+\begin{block}{Ilginc Gercek}
+Bu onemli.
 \end{block}
 
-\begin{alertblock}{Cautionary Tale}
-This is really important!
+\begin{alertblock}{Egitici Oyku}
+Bu gercekten onemli!
 \end{alertblock}
 \end{exampletwouptiny}
 
-\item How exactly they look depends on the theme\ldots
+\item Tam olarak nasıl göründükleri temaya bağlıdır \ldots
 \end{itemize}
 \end{frame}
 
@@ -407,11 +409,10 @@ This is really important!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]
-\frametitle{\insertsection: Themes}
+\frametitle{\insertsection: Temalar}
 \begin{itemize}
-\item Customise the look of your presentation using themes.
-\item See \url{http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html}
-for a large collection of themes.
+\item Temaları kullanarak sunumunuzun görünümünü özelleştirin.
+\item Geniş bir tema koleksiyonu için \url{http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html} adresine bakın.
 \end{itemize}
 \begin{minipage}{0.55\linewidth}
 \inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
@@ -426,47 +427,48 @@ for a large collection of themes.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Animation}
+\begin{frame}[fragile]{\insertsection: Animasyon}
 \begin{itemize}
-\item A frame can generate multiple slides.
-\item Use the \cmdbs{pause} command to show only part of a slide.
+\item Bir çerçeve birden çok slayt oluşturabilir.
+\item Bir slaytın yalnızca bir kısmını göstermek için \cmdbs{pause} komutunu kullanın.
 \vskip 2ex
 \begin{exampletwouptinynoframe}
 \begin{itemize}
-\item Can you feel the 
-\pause \item anticipation?
+\item Beklentiyi 
+\pause \item hissedebiliyor musun?
 \end{itemize}
 \end{exampletwouptinynoframe}
 \vskip 2ex
-\item There many more clever ways of making animations in \bftt{beamer}; see
-also the \cmdbs{only}, \cmdbs{alt}, and \cmdbs{uncover} commands.
+\item \bftt{beamer} içinde animasyon oluşturmanın daha birçok akıllı yolu vardır; 
+\cmdbs{only}, \cmdbs{alt}, ve \cmdbs{uncover} komutlarına da bakın.
+%\item There many more clever ways of making animations in \bftt{beamer}; see
+%also the \cmdbs{only}, \cmdbs{alt}, and \cmdbs{uncover} commands.
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Exercise}
+\begin{frame}[fragile]{\insertsection: Alıştırma}
 
-Recreate Peter Norvig's excellent ``Gettysburg Powerpoint Presentation'' in \bftt{beamer}.\footnote{\url{http://norvig.com/Gettysburg}}
+Peter Norvig'in mükemmel ``Gettysburg Powerpoint Sunumunu'' \bftt{beamer}'da yeniden oluşturun.\footnote{\url{http://norvig.com/Gettysburg}}
 
 \begin{enumerate}
-\item Open this exercise in \wllogo{}:
+\item Bu alıştırmayı \wllogo{}'da açın:
 \begin{center}
 \fbox{\href{\wlnewdoc{beamer-exercise.tex}}{%
-Click to open this exercise in \wllogo{}}}
+Bu alıştırmayı \wllogo{}'da açmak için tıklayın.}}
 \end{center}
 \vskip 2ex
-\item Download this image to your computer and upload it to \wllogo{} via the
-files menu.
+\item Bu resmi bilgisayarınıza indirin ve dosyalar menüsünden \wllogo{}'a yükleyin.
 \begin{center}
-\fbox{\href{\fileuri/gettysburg_graph.png?dl=1}{Click to download image}}
+\fbox{\href{\fileuri/gettysburg_graph.png?dl=1}{Resmi indirmek için tıklayın}}
 \end{center}
 \vskip 2ex
-\item Add \LaTeX{} commands to the text to make it look like this one:
+\item Metne \LaTeX{} komutları ekleyerek metnin böyle görünmesini sağlayın:
 \begin{center}
 \fbox{\href{\fileuri/beamer-exercise-solution.pdf}{%
-Click to open the model document}}
+Model belgeyi açmak için tıklayın}}
 \end{center}
 \end{enumerate}
 \end{frame}
@@ -474,25 +476,25 @@ Click to open the model document}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Drawings with \protect\tikzname}
+\section{\protect\tikzname{} ile Çizimler}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsection}
 \begin{itemize}
-\item \tikzname{} is a package for drawing figures in \LaTeX.
-\item It defines a powerful drawing language inside \LaTeX{}. Short programs can
-draw surprisingly complicated things.
+\item \tikzname{}, \LaTeX{}'te şekil çizmek için bir pakettir.
+\item \LaTeX{} içinde güçlü bir çizim dili tanımlar. Kısa programlar şaşırtıcı derecede karmaşık şeyler çizebilir.
 \begin{figure}
 \href{http://www.texample.net/tikz/examples/rotated-triangle/}{%
   \includegraphics[width=0.35\textwidth]{rotated-triangle}}
 \end{figure}
-\item We'll start with simple things. To draw a line in \tikzname:
+%\item We'll start with simple things. To draw a line in \tikzname:
+\item Basit şeylerle başlayacağız. \tikzname'de bir çizgi çizmek için
 \vskip 1ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}
-\draw (0,0) -- (1,1); % a line
+\draw (0,0) -- (1,1); % bir cizgi
 \end{tikzpicture}
 \end{exampletwouptiny}
 \end{itemize}
@@ -501,9 +503,9 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Coordinates}
+\begin{frame}[fragile]{\insertsection: Koordinatlar}
 \begin{itemize}
-\item The default coordinates are centimeters, with the usual sense: 
+\item Varsayılan koordinatlar, her zamanki anlamda santimetredir:
 \begin{figure}
 \begin{tikzpicture}[scale=0.5]
 \draw[help lines] (0,0) grid (3,3);
@@ -513,7 +515,7 @@ draw surprisingly complicated things.
 \node[above left] at (0,3) {$(0,3)$};
 \end{tikzpicture}
 \end{figure}
-\item It helps to draw a grid when you are working with \tikzname:
+\item \tikzname{} ile çalışırken bir ızgara çizmeye yardımcı olur:
 \vskip 1ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}
@@ -526,10 +528,10 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Lines}
+\begin{frame}[fragile]{\insertsection: Çizgiler}
 \begin{itemize}
-\item Arrow heads and line styles are specified as options to the \cmdbs{draw} command.
-\item End each draw command with a \keystrokebftt{;} semicolon.
+\item Ok uçları ve çizgi stilleri, \cmdbs{draw} komutuna argüman olarak verilir.
+\item Her çizim komutunu bir noktalı virgül \keystrokebftt{;} ile bitirin.
 \vskip 1ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}
@@ -545,20 +547,20 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Paths}
+\begin{frame}[fragile]{\insertsection: Yollar}
 \begin{itemize}
-\item You can specify multiple points to form a path.
-\item Arrows will appear only at the ends of the path.
+\item Bir yol oluşturmak için birden çok nokta belirtebilirsiniz.
+\item Oklar yalnızca yolun sonunda görünecektir.
 \vskip 1ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}
 \draw[help lines] (0,0) grid (3,3);
-% axes:
+% eksenler:
 \draw[<->, thick] (0,3)--(0,0)--(3,0);
-% diamond:
+% baklava dilimi:
 \draw (1.5,0.5) -- (2.5,1.5) -- 
       (1.5,2.5) -- (0.5,1.5) --
-      cycle; % close the path
+      cycle; % yolu kapat
 \end{tikzpicture}
 \end{exampletwouptiny}
 \end{itemize}
@@ -567,17 +569,17 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Colours}
+\begin{frame}[fragile]{\insertsection: Renkler}
 \begin{itemize}
-\item Colours are also specified as options to \cmdbs{draw}.
+\item Renkler ayrıca \cmdbs{draw} komutunun seçeneği olarak verilebilir.
 \vskip 1ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}
 \draw[help lines] (0,0) grid (3,3);
-% axes
+% eksenler
 \draw[<->, thick, red]
   (0,3)--(0,0)--(3,0); 
-% diamond
+% baklava dilimi
 \draw[thick, blue, fill=yellow]
   (1.5,0.5) -- (2.5,1.5) -- 
   (1.5,2.5) -- (0.5,1.5) --
@@ -590,9 +592,9 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Shapes}
+\begin{frame}[fragile]{\insertsection: Şekiller}
 \begin{itemize}
-\item \tikzname{} has built-in commands for simple shapes.
+\item \tikzname{} basit şekiller için yerleşik komutlara sahiptir.
 \vskip 1ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}
@@ -607,10 +609,10 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Nodes \& Labels}
+\begin{frame}[fragile]{\insertsection: Düğümler \& Etiketler}
 \begin{itemize}
-\item Use nodes to place text (and math) in \tikzname{} drawings.
-\item You can also use nodes as coordinates --- useful for diagrams.
+\item \tikzname{} çizimlerine metin (ve matematik) yerleştirmek için düğümleri kullanın..
+\item Düğümleri koordinatlar olarak da kullanabilirsiniz --- diyagramlar için kullanışlıdır.
 \vskip 1ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}
@@ -628,17 +630,17 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Functions}
+\begin{frame}[fragile]{\insertsection: Fonksiyonlar}
 \begin{itemize}
-\item You can even plot some simple functions.
+\item Bazı basit fonksiyonları dahi çizebilirsiniz.
 \vskip 1ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}[scale=0.5]
-% y axis
+% y ekseni
 \draw[<->, thick] (0,2) -- (0,-2);
-% x axis
+% x ekseni
 \draw[ ->, thick] (0,0) -- (7, 0); 
-% curves
+% egriler
 \draw[cyan,domain=0:2*pi]
   plot (\x, {sin(\x r)});
 \draw[magenta,domain=0:2*pi]
@@ -651,9 +653,9 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Examples}
+\begin{frame}[fragile]{\insertsection: Örnekler}
 \begin{itemize}
-\item Check out \fbox{\href{http://texample.net/tikz/}{\TeX{}ample.net}} for many \tikzname{} examples:
+\item Birçok \tikzname{} örneği için \fbox{\href{http://texample.net/tikz/}{\TeX{}ample.net}} adresine bakın: 
 \end{itemize}
 \begin{figure}
 \href{http://texample.net/tikz/examples/escher-brick-penrose-triangle/}{%
@@ -668,8 +670,8 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Exercise}
-Draw this in \tikzname:\footnote{Based on \url{http://xkcd.com/1022}}
+\begin{frame}[fragile]{\insertsection: Alıştırma}
+Aşağıdaki resmi \tikzname{}'de çizin:\footnote{\url{http://xkcd.com/1022} karikatüründen}
 \begin{figure}
 \input{tikz-exercise-solution}
 \end{figure}
@@ -678,29 +680,29 @@ Draw this in \tikzname:\footnote{Based on \url{http://xkcd.com/1022}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Notes with \protect\bftt{todonotes}}
+\section{\protect\bftt{todonotes} ile Notlar}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsection}
 \begin{itemize}
-\item The \cmdbs{todo} command from the \bftt{todonotes} package is great for
-leaving notes to yourself and your collaborators.
+\item \bftt{todonotes} paketindeki \cmdbs{todo} komutu, kendinize ve ortak çalışanlarınıza not bırakmak için harikadır.
+%\item The \cmdbs{todo} command from the \bftt{todonotes} package is great for leaving notes to yourself and your collaborators.
 \begin{exampletwouptiny}
-\todo{add results}
-\todo[color=blue!20]{fix method}
+\todo{sonuclari ekle}
+\todo[color=blue!20]{yontemi duzelt}
 \end{exampletwouptiny}
 \vskip 2ex
-\item Pro Tip: define your own commands with \cmdbs{newcommand}
+\item Profesyonel İpucu: \cmdbs{newcommand} ile kendi komutlarınızı tanımlayın 
 \begin{minted}[fontsize=\scriptsize,frame=single]{latex}
 \newcommand{\alice}[1]{\todo[color=green!40]{#1}}
 \newcommand{\bob}[1]{\todo[color=purple!40]{#1}}
 \end{minted}
-This can save a lot of typing:
+Bu, çok fazla yazmadan tasarruf sağlayabilir:
 \begin{exampletwouptiny}
-\alice{add results}
-\bob{fix method}
+\alice{sonuclari ekle}
+\bob{yontemi duzelt}
 \end{exampletwouptiny}
 \end{itemize}
 \end{frame}
@@ -712,9 +714,8 @@ This can save a lot of typing:
 \begin{columns}
   \begin{column}{0.4\textwidth}
     \begin{itemize}
-    \item Only inline notes are supported with beamer, but margin notes are
-    supported for normal documents.
-    \item There is also a handy \cmdbs{listoftodos} command.
+    \item Beamer ile yalnızca satır içi notlar desteklenir, ancak normal belgeler için kenar boşluğu notları desteklenir.
+    \item Ayrıca kullanışlı bir \cmdbs{listoftodos} komutu da vardır.
     \end{itemize}
   \end{column}
   \begin{column}{0.6\textwidth}
@@ -726,16 +727,15 @@ This can save a lot of typing:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Spreadsheets with \protect\bftt{spreadtab}}
+\section{\protect\bftt{spreadtab} ile Elektronik Tablolar}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsection}
 \begin{itemize}
-\item Now that you've seen how \LaTeX{} can replace Word and PowerPoint, what
-about Excel?
-\item Homework: try the \fbox{\href{http://www.ctan.org/pkg/spreadtab}{\bftt{spreadtab} package}}!
+\item Artık \LaTeX{} 'in Word ve PowerPoint'in yerini nasıl alabileceğini gördünüz, peki Excel?
+\item Ödev: \fbox{\href{http://www.ctan.org/pkg/spreadtab}{\bftt{spreadtab} paketini}} deneyin!
 \end{itemize}
 \end{frame}
 
@@ -744,7 +744,7 @@ about Excel?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \begin{center}
-Thanks, and happy \TeX{}ing!
+Teşekkürler ve mutlu \TeX{}lemeler!
 \end{center}
 \end{frame}
 
